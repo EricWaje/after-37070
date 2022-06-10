@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Remera",
+        "price": 200,
+        "stock": 4,
+
+        "img": "https://res.cloudinary.com/ericwaje/image/upload/v1619372707/remera3_vc9mqa.jpg",
+        "category": "remeras",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt iusto magni quaerat nisi quisquam? Error, earum aspernatur tenetur sint cum in quibusdam eos quae velit ratione maxime! Error, earum repellendus."
+    },
+    {
+        "name": "Remera2",
+        "price": 222,
+        "stock": 10,
+
+        "img": "https://res.cloudinary.com/ericwaje/image/upload/v1619372707/remera2_pe94nf.jpg",
+        "category": "remeras",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt iusto magni quaerat nisi quisquam? Error, earum aspernatur tenetur sint cum in quibusdam eos quae velit ratione maxime! Error, earum repellendus."
+    }
+]
