@@ -4,10 +4,6 @@ const ItemCount = ({ initial, stock, onAdd }) => {
     const [count, setCount] = useState(initial);
 
     const suma = () => {
-        /* if (count < stock) {
-            setCount(count + 1);
-        } */
-
         count !== stock && setCount(count + 1);
     };
 
@@ -23,7 +19,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
                 <button onClick={resta}>-</button>
             </div>
             <div className="add-cart">
-                <button>Add to Cart!</button>
+                <button onClick={() => onAdd(count)}>Add to Cart!</button>
             </div>
         </div>
     );

@@ -1,35 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import { productos } from '../../mock/products';
+import { useParams } from 'react-router-dom';
+import { traerProductos } from '../../mock/products';
 import ItemList from '../ItemList/ItemList';
 
-const ItemListContainer = ({ saludo }) => {
+const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const { categoryId } = useParams();
 
     useEffect(() => {
-        //apis, llamados al backend
-        const traerProductos = new Promise((res, rej) => {
-            setTimeout(() => {
-                res(productos);
-            }, 2000);
-        });
-        //console.log(traerProductos)
-        traerProductos
+        setLoading(true);
+        traerProductos(categoryId)
             .then((res) => {
-                //console.log(res)
                 setProducts(res);
             })
             .catch((error) => {
                 console.log(error);
+            })
+            .finally(() => {
+                setLoading(false);
             });
-    }, []);
-
-    //console.log(products);
+    }, [categoryId]);
 
     return (
-        <>
-            <div>{saludo}</div>
-            <ItemList items={products} />
-        </>
+        <div className="ilc">
+            {loading ? <h2>Cargando...</h2> : <ItemList items={products} />}
+        </div>
     );
 };
 
